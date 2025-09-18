@@ -1,0 +1,220 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+  font-family:writer;
+  background-color: #f87171;
+  display: flex;
+  justify-content: center;  /* center links */
+  align-items: center;
+  padding: 12px 40px;
+  position: relative; /* so hamburger can be positioned */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+/* Hamburger */
+.hamburger {
+  position: absolute;
+  right: 40px;
+}
+
+.hamburger img {
+  width: 28px;
+  height: auto;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.hamburger img:hover {
+  opacity: 0.7; /* hover effect */
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  align-items: stretch;
+  background: linear-gradient(to right, #fff59d, #f48fb1);
+  height: 100vh; /* full screen height */
+  margin: 0;
+  margin-bottom: 20px; /* small white gap after hero */
+}
+
+.hero-text, .hero-img {
+  flex: 1;
+}
+
+.hero-text {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* vertical center */
+  align-items: flex-start;   /* left align */
+}
+
+.hero-text h1 {
+  font-size: 52px;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.hero-text button {
+  background-color: #f87171;
+  border: none;
+  padding: 14px 34px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+}
+
+.hero-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Gallery Section */
+.gallery {
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  background: linear-gradient(to right, #fff59d, #f48fb1);
+  height: 100vh;   /* same size as first slide */
+  margin: 0;       
+  gap: 2rem;
+  padding: 40px;
+}
+
+/* Left 3 images grid */
+.gallery-left {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(2, 180px); /* smaller fixed rows */
+  gap: 1rem;
+  flex: 1.5;
+  max-width: 600px;
+  align-self: center; /* vertical center */
+}
+
+.gallery-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* Image positions */
+.gallery-left img:nth-child(1) {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.gallery-left img:nth-child(2) {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.gallery-left img:nth-child(3) {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+}
+
+/* Right side red text box */
+.gallery-text {
+  background: #f87171;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 25px;
+  height: 300px;   /* reduced height */
+  width: 320px;    /* fixed width */
+  max-width: 400px; /* remove previous restriction */
+}
+
+/* Typography inside gallery */
+.gallery-text p {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.gallery-text h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.gallery-text a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Remove default spacing for sections */
+section {
+  margin: 0;
+  padding: 0;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .nav-links {
+    display: none;
+  }
+  .hamburger img {
+    display: block;
+  }
+
+  .hero, .gallery {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .hero-img img, 
+  .gallery-left img {
+    height: auto;
+  }
+
+  .gallery-left {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .gallery-text {
+    height: auto;
+    width: 100%;
+    max-width: 100%;
+  }
+}
